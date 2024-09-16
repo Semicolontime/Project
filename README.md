@@ -1,53 +1,36 @@
-# Site entry form
+# Site Entry Form
+
 #### Video Demo: <URL HERE>
+
 #### Description:
-# Simple Website Login System
 
-Welcome to the Simple Website Login System project! This Python application simulates a basic website login page with a variety of features, all developed using Python alone.
+This program is a simple design of a website login page. After logging in, you will have access to limited and defined features. Essentially, this project implements a website login with various features, all developed using Python only.
 
-## Overview
+### Program Details:
 
-The application includes:
+The program consists of 8 functions and 2 classes. Here is an overview of each component:
 
-- **8 Functions**
-- **2 Classes**
+1. **`main`**:
+   - This is the main function of the program and initiates the execution of the project.
 
-### Functions
+2. **`sign_up`**:
+   - This function handles user registration. It prompts the user for a username and a password. The password is validated using regex to prevent simple passwords. Users cannot proceed to the next step until they enter a password that meets the defined criteria.
 
-1. **`main`**: This is the entry point of the application. Running this function starts the program.
+3. **`log_in`**:
+   - This function is used when the user wants to log into their account after completing the registration. It first requests the username. If the username is incorrect or the user is not registered, they are prompted to sign up again. If the username is correct, the function then asks for the password. The user can enter the password once, and if they forget it, they have the option to execute the `forgot_password` function.
 
-2. **`sign_up`**: This function handles user registration. When executed, it prompts the user to enter a username and a password. Passwords are checked against a regex pattern to ensure they meet complexity requirements. Users must choose a valid password to proceed with registration.
+4. **`forgot_password`**:
+   - This function asks the user for their phone number to send a recovery code. The phone number is validated using regex for Iranian phone numbers. After entering the phone number, a default recovery code (232323) is sent. The user needs to enter this code to retrieve their password and then access the main site.
 
-3. **`log_in`**: After registration, users can log in using this function. It first asks for the username. If the username is incorrect, the user is redirected to the sign-up page. If the username is correct, the function then asks for the password. If the password is incorrect, the user has the option to either re-enter it or use the "forgot_password" feature.
+5. **`options`**:
+   - This is the main function that provides various features to the user. Based on the selected option, different functions are called:
+     - **Calculator**: This feature allows the user to perform four basic arithmetic operations. The user is redirected to the `use_calculator` function where they can choose an operation, input values, and see the result.
+     - **Text by Animal**: With this option, the user can input a sentence and choose an animal. The chosen animal will then "speak" the sentence using the `cowsay` library.
+     - **Bank Account Recharge**: This feature represents a symbolic wallet on the site. Users can manage their wallet balance, including depositing and withdrawing funds, through a specific class designed for this purpose.
+     - **Cookie Jar**: Users can define and manage a specific amount of cookies. This functionality is handled by the `Jar` class, allowing users to add or remove cookies.
+     - **Bitcoin Price**: This feature displays the current price of Bitcoin. It uses the `requests` and `json` libraries to fetch the price and the `pyttsx3` library to read it out loud.
 
-4. **`forgot_password`**: If users forget their password, this function allows them to recover it. It asks for a phone number, which is validated using regex for Iranian phone formats. A default recovery code (232323) is used to simulate the recovery process. Entering the correct code will allow users to access their account.
+6. **`line`**:
+   - This function adds a decorative line in the terminal to enhance the visual separation of different sections.
 
-5. **`options`**: This is the main interactive function that presents users with various features:
-
-   - **Calculator**: A simple calculator that performs basic arithmetic operations. The `use_calculator` function handles the calculations based on user input and displays the result.
-   
-   - **Cow Say**: This feature lets users display a message in a speech bubble from a selected animal using the `cowsay` library. The `cow_say` function manages the visual output.
-
-   - **Bank Account**: Simulates a bank account with a wallet interface. Users can deposit, withdraw, and check their balance using a class designed to manage the wallet's balance.
-
-   - **Cookies**: Allows users to create and manage a virtual cookie jar. Users can define and adjust the number of cookies using the `Jar` class.
-
-   - **Bitcoin Price**: Fetches and displays the current price of Bitcoin. It uses the `requests` and `json` libraries to get the price and `pyttsx3` to read it out loud.
-
-6. **`line`**: Adds decorative lines to enhance the terminal interface.
-
-## How to Use
-
-1. Start by running the `main` function to launch the application.
-2. Follow the prompts to register, log in, and explore the various features available.
-
-## Dependencies
-
-To run this project, you'll need the following Python libraries:
-
-- `requests`
-- `json`
-- `pyttsx3`
-- `cowsay`
-- `re` (for regex validation)
-
+This project represents a simulated website login and user account management system. I hope you understand the details and encourage you to test the project.
