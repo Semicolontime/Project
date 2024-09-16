@@ -1,0 +1,4 @@
+cowsay
+requests
+pyttsx3
+pytest
